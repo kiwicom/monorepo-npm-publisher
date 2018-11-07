@@ -25,6 +25,7 @@ export default function createWebpackConfig(
     output: {
       path: paths.buildCache,
       filename: '[name]',
+      libraryTarget: 'commonjs2',
     },
     module: {
       rules: [
