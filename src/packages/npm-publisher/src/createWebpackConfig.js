@@ -6,15 +6,24 @@ import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 import paths from '../../../../paths';
 
+type PackageJSON = {|
+  +main: string,
+|};
+
 export default function createWebpackConfig(
   packageFolder: string,
-  packageJSON: Object,
+  packageJSON: PackageJSON,
 ) {
   const packageMainFile = packageJSON.main;
 
   return {
     mode: 'none',
     target: 'node',
+    optimization: {
+      nodeEnv: false,
+      namedModules: true,
+      namedChunks: true,
+    },
     entry: {
       [path.join(packageFolder, packageMainFile)]: path.join(
         paths.packages,
