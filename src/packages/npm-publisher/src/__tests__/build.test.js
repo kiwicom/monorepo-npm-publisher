@@ -40,10 +40,12 @@ it('compiles correct build', done => {
 
     const __NODE_ENV = process.env.NODE_ENV;
     process.env.NODE_ENV = 'production';
+    // eslint-disable-next-line no-eval
     let x = eval(content.toString());
     expect(x.testNodeEnv).toBe('AAA');
 
     process.env.NODE_ENV = __NODE_ENV;
+    // eslint-disable-next-line no-eval
     x = eval(content.toString());
     expect(x.testNodeEnv).toBe('BBB');
 
