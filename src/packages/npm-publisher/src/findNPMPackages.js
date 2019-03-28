@@ -9,6 +9,7 @@ type Callback = ({
   packageJSONFile: Object,
 }) => void;
 
+// TODO: possibly replaceable with `@kiwicom/monorepo` and `iterateWorkspacesInPath` (?)
 export default function findNPMPackages(
   packagesLocation: string,
   cb: Callback,
