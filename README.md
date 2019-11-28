@@ -33,7 +33,6 @@ import publish from '@kiwicom/npm-publisher';
     // Workspaces to publish on NPM. It takes into account only
     // packages with public visibility set in `package.json`.
     workspaces: new Set([
-      '@kiwicom/fetch',
       '@kiwicom/relay',
       '@kiwicom/eslint-config',
     ]),
